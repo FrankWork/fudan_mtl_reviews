@@ -7,6 +7,7 @@ TensorFlow implementation of the paper [Adversarial Multi-task Learning for Text
 - The Orthogonality Constraints loss (diff loss) is copied from 'research/domain_adaptation' of https://github.com/tensorflow/models. The correlation matrix is normalized. Otherwise, the loss value will be too large.
 
 performace using 50d word embedding:
+
 models           | avg error
 -----------------|-----------
 mtl              | 13.75
