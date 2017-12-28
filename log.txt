@@ -273,3 +273,231 @@ mtl + adv        12.79
 mtl + adv + diff 12.70
 
 
+$ word_dim 300, no adv
+
+Epoch 0 loss 1.48 acc 0.52 0.6007 time 45.15
+Epoch 1 loss 1.18 acc 0.54 0.6920 time 44.73
+Epoch 2 loss 1.01 acc 0.58 0.7079 time 41.56
+Epoch 3 loss 0.88 acc 0.60 0.7211 time 41.60
+Epoch 4 loss 0.79 acc 0.63 0.7482 time 41.54
+Epoch 5 loss 0.73 acc 0.65 0.7725 time 41.23
+Epoch 6 loss 0.66 acc 0.68 0.7734 time 40.66
+Epoch 7 loss 0.63 acc 0.69 0.7950 time 40.59
+Epoch 8 loss 0.59 acc 0.71 0.7962 time 40.56
+Epoch 9 loss 0.55 acc 0.74 0.8170 time 41.21
+Epoch 10 loss 0.53 acc 0.75 0.8100 time 42.24
+Epoch 11 loss 0.50 acc 0.77 0.8237 time 39.62
+Epoch 12 loss 0.48 acc 0.78 0.8213 time 43.00
+Epoch 13 loss 0.46 acc 0.79 0.8216 time 38.09
+Epoch 14 loss 0.45 acc 0.80 0.8311 time 37.81
+Epoch 15 loss 0.43 acc 0.81 0.8320 time 40.70
+Epoch 16 loss 0.42 acc 0.82 0.8361 time 40.07
+Epoch 17 loss 0.40 acc 0.82 0.8380 time 41.90
+Epoch 18 loss 0.38 acc 0.83 0.8450 time 41.45
+Epoch 19 loss 0.37 acc 0.84 0.8434 time 41.52
+Epoch 20 loss 0.36 acc 0.85 0.8471 time 38.21
+Epoch 21 loss 0.35 acc 0.86 0.8534 time 43.42
+Epoch 22 loss 0.34 acc 0.86 0.8484 time 42.39
+Epoch 23 loss 0.33 acc 0.87 0.8532 time 38.26
+Epoch 24 loss 0.31 acc 0.87 0.8525 time 40.09
+Epoch 25 loss 0.30 acc 0.88 0.8527 time 38.44
+Epoch 26 loss 0.29 acc 0.88 0.8548 time 37.13
+Epoch 27 loss 0.28 acc 0.89 0.8554 time 40.65
+Epoch 28 loss 0.27 acc 0.89 0.8588 time 40.41
+Epoch 29 loss 0.27 acc 0.90 0.8596 time 42.80
+Epoch 30 loss 0.26 acc 0.90 0.8605 time 42.74
+Epoch 31 loss 0.25 acc 0.90 0.8586 time 43.80
+Epoch 32 loss 0.24 acc 0.91 0.8629 time 38.16
+Epoch 33 loss 0.23 acc 0.91 0.8625 time 42.89
+Epoch 34 loss 0.23 acc 0.91 0.8648 time 38.10
+Epoch 35 loss 0.21 acc 0.92 0.8655 time 41.07
+Epoch 36 loss 0.21 acc 0.93 0.8661 time 44.78
+Epoch 37 loss 0.21 acc 0.93 0.8636 time 44.58
+Epoch 38 loss 0.20 acc 0.93 0.8671 time 37.70
+Epoch 39 loss 0.19 acc 0.93 0.8614 time 41.84
+Epoch 40 loss 0.18 acc 0.93 0.8679 time 38.29
+Epoch 41 loss 0.18 acc 0.93 0.8675 time 39.54
+Epoch 42 loss 0.17 acc 0.94 0.8643 time 36.58
+Epoch 43 loss 0.17 acc 0.94 0.8663 time 35.79
+Epoch 44 loss 0.16 acc 0.95 0.8661 time 35.88
+Epoch 45 loss 0.16 acc 0.95 0.8680 time 35.97
+Epoch 46 loss 0.16 acc 0.95 0.8668 time 42.32
+Epoch 47 loss 0.15 acc 0.95 0.8641 time 38.97
+Epoch 48 loss 0.15 acc 0.95 0.8671 time 38.84
+Epoch 49 loss 0.15 acc 0.95 0.8677 time 37.84
+Epoch 50 loss 0.14 acc 0.96 0.8645 time 37.09
+Epoch 51 loss 0.14 acc 0.95 0.8638 time 35.45
+Epoch 52 loss 0.14 acc 0.96 0.8675 time 35.31
+Epoch 53 loss 0.13 acc 0.96 0.8664 time 35.08
+Epoch 54 loss 0.12 acc 0.96 0.8670 time 36.38
+Epoch 55 loss 0.12 acc 0.96 0.8661 time 36.76
+Epoch 56 loss 0.12 acc 0.96 0.8677 time 38.78
+Epoch 57 loss 0.12 acc 0.97 0.8648 time 38.90
+Epoch 58 loss 0.12 acc 0.96 0.8643 time 39.92
+Epoch 59 loss 0.12 acc 0.97 0.8661 time 40.00
+Epoch 60 loss 0.11 acc 0.97 0.8664 time 40.15
+Epoch 61 loss 0.11 acc 0.97 0.8657 time 38.66
+Epoch 62 loss 0.11 acc 0.97 0.8646 time 39.22
+Epoch 63 loss 0.10 acc 0.97 0.8652 time 37.65
+Epoch 64 loss 0.10 acc 0.97 0.8686 time 35.36
+Epoch 65 loss 0.10 acc 0.97 0.8659 time 38.76
+Epoch 66 loss 0.09 acc 0.97 0.8684 time 37.78
+Epoch 67 loss 0.10 acc 0.97 0.8700 time 34.83
+Epoch 68 loss 0.09 acc 0.97 0.8650 time 39.82
+Epoch 69 loss 0.09 acc 0.98 0.8663 time 37.55
+Epoch 70 loss 0.09 acc 0.97 0.8671 time 37.37
+Epoch 71 loss 0.09 acc 0.98 0.8704 time 37.48
+Epoch 72 loss 0.08 acc 0.98 0.8671 time 39.48
+Epoch 73 loss 0.09 acc 0.98 0.8698 time 37.28
+Epoch 74 loss 0.09 acc 0.98 0.8684 time 37.28
+Epoch 75 loss 0.08 acc 0.98 0.8663 time 37.44
+Epoch 76 loss 0.08 acc 0.98 0.8686 time 37.14
+Epoch 77 loss 0.08 acc 0.98 0.8695 time 37.48
+Epoch 78 loss 0.08 acc 0.98 0.8675 time 37.33
+Epoch 79 loss 0.08 acc 0.98 0.8675 time 37.69
+Epoch 80 loss 0.08 acc 0.98 0.8700 time 37.62
+Epoch 81 loss 0.08 acc 0.98 0.8638 time 37.44
+Epoch 82 loss 0.07 acc 0.98 0.8689 time 37.54
+Epoch 83 loss 0.07 acc 0.98 0.8673 time 37.97
+Epoch 84 loss 0.07 acc 0.98 0.8675 time 37.88
+Epoch 85 loss 0.07 acc 0.98 0.8695 time 37.04
+Epoch 86 loss 0.07 acc 0.98 0.8700 time 37.29
+Epoch 87 loss 0.07 acc 0.98 0.8663 time 37.43
+Epoch 88 loss 0.07 acc 0.98 0.8707 time 35.70
+Epoch 89 loss 0.07 acc 0.98 0.8668 time 39.22
+Epoch 90 loss 0.07 acc 0.98 0.8682 time 35.51
+Epoch 91 loss 0.07 acc 0.98 0.8675 time 35.59
+Epoch 92 loss 0.07 acc 0.98 0.8671 time 36.45
+Epoch 93 loss 0.07 acc 0.99 0.8657 time 37.20
+Epoch 94 loss 0.07 acc 0.98 0.8689 time 37.10
+Epoch 95 loss 0.07 acc 0.98 0.8664 time 37.09
+Epoch 96 loss 0.07 acc 0.98 0.8675 time 37.16
+Epoch 97 loss 0.06 acc 0.99 0.8654 time 37.24
+Epoch 98 loss 0.06 acc 0.99 0.8688 time 37.00
+Epoch 99 loss 0.06 acc 0.99 0.8673 time 36.81
+Done training, best_epoch: 88, best_acc: 0.8707
+duration: 1.08 hours
+
+
+$ word_dim 300, adv
+
+Epoch 0 loss 4.17 acc 0.52 0.6384 time 71.92
+Epoch 1 loss 6.35 acc 0.57 0.7273 time 77.71
+Epoch 2 loss 6.08 acc 0.63 0.7782 time 73.95
+Epoch 3 loss 6.20 acc 0.69 0.8055 time 73.20
+Epoch 4 loss 7.83 acc 0.72 0.8179 time 71.70
+Epoch 5 loss 9.96 acc 0.75 0.8271 time 71.98
+Epoch 6 loss 12.50 acc 0.77 0.8427 time 71.21
+Epoch 7 loss 15.56 acc 0.79 0.8398 time 72.73
+Epoch 8 loss 18.99 acc 0.80 0.8409 time 64.95
+Epoch 9 loss 22.65 acc 0.81 0.8509 time 65.62
+Epoch 10 loss 26.59 acc 0.81 0.8571 time 61.04
+Epoch 11 loss 30.75 acc 0.83 0.8554 time 65.96
+Epoch 12 loss 35.07 acc 0.83 0.8502 time 62.32
+Epoch 13 loss 39.64 acc 0.84 0.8648 time 62.82
+Epoch 14 loss 44.38 acc 0.84 0.8616 time 73.21
+Epoch 15 loss 49.34 acc 0.85 0.8589 time 63.09
+Epoch 16 loss 54.44 acc 0.85 0.8664 time 64.61
+Epoch 17 loss 59.65 acc 0.87 0.8677 time 67.66
+Epoch 18 loss 65.09 acc 0.86 0.8654 time 71.74
+Epoch 19 loss 70.68 acc 0.86 0.8654 time 62.87
+Epoch 20 loss 76.42 acc 0.86 0.8730 time 62.97
+Epoch 21 loss 82.26 acc 0.87 0.8693 time 72.11
+Epoch 22 loss 88.19 acc 0.87 0.8745 time 65.15
+Epoch 23 loss 94.25 acc 0.88 0.8746 time 70.87
+Epoch 24 loss 100.40 acc 0.88 0.8746 time 71.71
+Epoch 25 loss 106.60 acc 0.88 0.8759 time 63.52
+Epoch 26 loss 112.80 acc 0.89 0.8670 time 73.53
+Epoch 27 loss 118.95 acc 0.89 0.8705 time 65.49
+Epoch 28 loss 125.18 acc 0.89 0.8727 time 63.59
+Epoch 29 loss 131.46 acc 0.89 0.8766 time 63.97
+Epoch 30 loss 137.72 acc 0.90 0.8766 time 71.51
+Epoch 31 loss 143.98 acc 0.90 0.8714 time 62.54
+Epoch 32 loss 150.13 acc 0.90 0.8766 time 61.29
+Epoch 33 loss 156.25 acc 0.91 0.8766 time 66.92
+Epoch 34 loss 162.18 acc 0.91 0.8827 time 61.79
+Epoch 35 loss 167.97 acc 0.91 0.8723 time 67.85
+Epoch 36 loss 173.56 acc 0.92 0.8746 time 65.60
+Epoch 37 loss 178.97 acc 0.92 0.8782 time 63.73
+Epoch 38 loss 184.21 acc 0.92 0.8784 time 63.22
+Epoch 39 loss 189.16 acc 0.92 0.8786 time 63.75
+Epoch 40 loss 193.89 acc 0.93 0.8766 time 63.67
+Epoch 41 loss 198.37 acc 0.93 0.8770 time 63.86
+Epoch 42 loss 202.53 acc 0.93 0.8764 time 66.12
+Epoch 43 loss 206.48 acc 0.93 0.8759 time 64.66
+Epoch 44 loss 210.38 acc 0.93 0.8764 time 63.01
+Epoch 45 loss 214.36 acc 0.93 0.8764 time 63.69
+Epoch 46 loss 218.37 acc 0.94 0.8761 time 63.74
+Epoch 47 loss 222.50 acc 0.94 0.8784 time 66.24
+Epoch 48 loss 226.65 acc 0.94 0.8754 time 64.52
+Epoch 49 loss 230.78 acc 0.94 0.8761 time 63.06
+Epoch 50 loss 235.17 acc 0.94 0.8721 time 62.95
+Epoch 51 loss 239.55 acc 0.94 0.8754 time 63.86
+Epoch 52 loss 243.94 acc 0.94 0.8759 time 64.31
+Epoch 53 loss 248.27 acc 0.94 0.8734 time 65.40
+Epoch 54 loss 252.64 acc 0.94 0.8757 time 64.03
+Epoch 55 loss 257.00 acc 0.95 0.8782 time 63.66
+Epoch 56 loss 261.51 acc 0.95 0.8748 time 61.75
+Epoch 57 loss 265.99 acc 0.95 0.8741 time 61.23
+Epoch 58 loss 270.68 acc 0.95 0.8798 time 60.73
+Epoch 59 loss 275.16 acc 0.95 0.8830 time 60.21
+Epoch 60 loss 279.90 acc 0.96 0.8809 time 67.21
+Epoch 61 loss 284.44 acc 0.96 0.8773 time 63.94
+Epoch 62 loss 289.05 acc 0.96 0.8773 time 64.64
+Epoch 63 loss 294.10 acc 0.96 0.8730 time 64.42
+Epoch 64 loss 298.66 acc 0.96 0.8757 time 63.98
+Epoch 65 loss 303.35 acc 0.96 0.8761 time 63.49
+Epoch 66 loss 308.53 acc 0.96 0.8789 time 62.17
+Epoch 67 loss 313.08 acc 0.97 0.8805 time 64.05
+Epoch 68 loss 317.71 acc 0.96 0.8746 time 63.28
+Epoch 69 loss 323.19 acc 0.96 0.8805 time 63.39
+Epoch 70 loss 328.75 acc 0.96 0.8811 time 63.13
+Epoch 71 loss 333.23 acc 0.96 0.8791 time 63.01
+Epoch 72 loss 337.84 acc 0.96 0.8782 time 64.11
+Epoch 73 loss 343.04 acc 0.96 0.8779 time 64.08
+Epoch 74 loss 348.90 acc 0.97 0.8795 time 64.64
+Epoch 75 loss 354.26 acc 0.97 0.8788 time 63.54
+Epoch 76 loss 358.34 acc 0.97 0.8811 time 63.67
+Epoch 77 loss 362.36 acc 0.97 0.8771 time 64.52
+Epoch 78 loss 367.45 acc 0.97 0.8807 time 63.48
+Epoch 79 loss 373.06 acc 0.97 0.8745 time 63.74
+Epoch 80 loss 379.11 acc 0.97 0.8784 time 63.13
+Epoch 81 loss 384.60 acc 0.97 0.8773 time 61.59
+Epoch 82 loss 389.33 acc 0.97 0.8782 time 60.35
+Epoch 83 loss 393.64 acc 0.97 0.8748 time 62.91
+Epoch 84 loss 398.29 acc 0.97 0.8798 time 61.27
+Epoch 85 loss 403.68 acc 0.97 0.8771 time 65.00
+Epoch 86 loss 409.47 acc 0.97 0.8738 time 63.24
+Epoch 87 loss 415.02 acc 0.97 0.8761 time 63.77
+Epoch 88 loss 420.27 acc 0.97 0.8739 time 63.61
+Epoch 89 loss 424.81 acc 0.98 0.8752 time 64.59
+Epoch 90 loss 429.16 acc 0.97 0.8759 time 63.81
+Epoch 91 loss 433.43 acc 0.98 0.8780 time 63.37
+Epoch 92 loss 437.45 acc 0.98 0.8741 time 63.58
+Epoch 93 loss 441.53 acc 0.98 0.8771 time 63.41
+Epoch 94 loss 445.69 acc 0.98 0.8762 time 64.05
+Epoch 95 loss 449.42 acc 0.98 0.8787 time 63.53
+Epoch 96 loss 453.18 acc 0.98 0.8789 time 63.73
+Epoch 97 loss 456.89 acc 0.98 0.8804 time 63.90
+Epoch 98 loss 460.41 acc 0.98 0.8793 time 64.28
+Epoch 99 loss 463.07 acc 0.98 0.8791 time 64.56
+Done training, best_epoch: 59, best_acc: 0.8830
+duration: 1.81 hours
+
+
+dataset	cnn+share embedding     mtl+adv+diff
+apparel	              14.00   13.00  -1.00
+baby          	      13.25   10.00  -3.25
+books         	      12.25   12.50  +0.25
+camera_photo  	      10.00   08.75  -1.25
+electronics	          14.50   14.00  -0.5
+health_personal_care	12.00   10.50  -1.5
+imdb	                14.00   15.50  +1.5
+kitchen_housewares	  13.75   11.75  -2.0
+magazines	            08.25   07.50  -0.75
+music	                17.00   17.75  +0.75
+software	            11.25   08.00  -3.25
+sports_outdoors	      15.75   11.25  -4.5
+toys_games	          12.50   11.75  -0.75
+video	                12.50   11.50  -1.0
+mean	                12.93   11.70  -1.23

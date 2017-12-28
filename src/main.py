@@ -12,11 +12,12 @@ from models import mtl_model
 
 flags = tf.app.flags
 
-flags.DEFINE_integer("word_dim", 50, "word embedding size")
+flags.DEFINE_integer("word_dim", 300, "word embedding size")
 flags.DEFINE_integer("num_epochs", 100, "number of epochs")
 flags.DEFINE_integer("batch_size", 16, "batch size")
 
 flags.DEFINE_boolean('adv', False, 'set True to adv training')
+flags.DEFINE_boolean('test', False, 'set True to test')
 flags.DEFINE_boolean('build_data', False, 'set True to generate data')
 
 FLAGS = tf.app.flags.FLAGS
@@ -45,8 +46,8 @@ def build_data():
 
   def _trim_embed():
     print('trimming pretrained embeddings')
-    util.trim_embeddings(50)
-    # util.trim_embeddings(300)
+    # util.trim_embeddings(50)
+    util.trim_embeddings(300)
 
   print('load raw data')
   all_data = []
@@ -106,6 +107,20 @@ def train(sess, m_train, m_valid):
   print('duration: %.2f hours' % duration)
   sys.stdout.flush()
 
+def test(sess, m_valid):
+  m_valid.restore(sess)
+  n_task = len(m_valid.tensors)
+  errors = []
+
+  print('dataset\terror rate')
+  for i in range(n_task):
+    acc, _ = m_valid.tensors[i]
+    acc = sess.run(acc)
+    err = 1-acc
+    print('%s\t%.4f' % (fudan.get_task_name(i), err))
+    errors.append(err)
+  errors = np.asarray(errors)
+  print('mean\t%.4f' % np.mean(errors))
   
 def main(_):
   if FLAGS.build_data:
@@ -121,9 +136,12 @@ def main(_):
       task_name = fudan.get_task_name(task_id)
       all_train.append((task_name, train_data))
       all_test.append((task_name, test_data))
-      
+    
+    model_name = 'fudan-mtl'
+    if FLAGS.adv:
+      model_name += '-adv'
     m_train, m_valid = mtl_model.build_train_valid_model(
-                       'fudan-mtl', word_embed, all_train, all_test, FLAGS.adv)
+            model_name, word_embed, all_train, all_test, FLAGS.adv, FLAGS.test)
       
     init_op = tf.group(tf.global_variables_initializer(),
                         tf.local_variables_initializer())# for file queue
@@ -134,7 +152,11 @@ def main(_):
       sess.run(init_op)
       print('='*80)
 
-      train(sess, m_train, m_valid)
+      if FLAGS.test:
+        test(sess, m_valid)
+      else:
+        train(sess, m_train, m_valid)
+      
 
 if __name__ == '__main__':
   tf.app.run()

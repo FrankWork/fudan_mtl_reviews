@@ -21,4 +21,5 @@ tar zxvf fudan-mtl-dataset.tar.gz
 cd ../
 python3 src/main.py --build_data
 python3 src/main.py --adv
+python3 src/main.py --adv --test
 ```

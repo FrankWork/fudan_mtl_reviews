@@ -124,12 +124,13 @@ class MTLModel(BaseModel):
         train_op = optimize(loss)
         self.train_ops.append(train_op)
 
-def build_train_valid_model(model_name, word_embed, all_train, all_test, adv):
+def build_train_valid_model(model_name, word_embed, all_train, all_test, adv, test):
   with tf.name_scope("Train"):
     with tf.variable_scope(model_name, reuse=None):
       m_train = MTLModel(word_embed, all_train, adv, is_train=True)
       m_train.set_saver(model_name)
-      m_train.build_train_op()
+      if not test:
+        m_train.build_train_op()
   with tf.name_scope('Valid'):
     with tf.variable_scope(model_name, reuse=True):
       m_valid = MTLModel(word_embed, all_test, adv, is_train=False)
