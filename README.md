@@ -19,7 +19,7 @@ To train the model:
 cd data/
 tar zxvf fudan-mtl-dataset.tar.gz
 cd ../
-python3 src/main.py --build_data
-python3 src/main.py --adv
-python3 src/main.py --adv --test
+python3 src/main.py --word_dim=50 --build_data
+python3 src/main.py --word_dim=50 --adv
+python3 src/main.py --word_dim=50 --adv --test
 ```
