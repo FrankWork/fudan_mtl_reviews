@@ -1,3 +1,7 @@
 __pycache__
 push
 run
+.idea
+generated
+mtl-dataset
+saved_models
