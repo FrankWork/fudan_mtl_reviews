@@ -1,9 +1,16 @@
 import tensorflow as tf
-from models.base_model import * 
+from models.base_model import *
+from inputs import fudan
 
 FLAGS = tf.app.flags.FLAGS
 
 TASK_NUM=14
+
+
+def _summary_mean(tensor, pos, name):
+  mean = tf.stack([t[pos] for t in tensor], axis=0)
+  mean = tf.reduce_mean(mean, axis=0)
+  return tf.summary.scalar(name, mean)
 
 class MTLModel(BaseModel):
 
@@ -26,6 +33,8 @@ class MTLModel(BaseModel):
     self.shared_linear = LinearLayer('linear_shared', TASK_NUM, True)
 
     self.tensors = []
+
+    self.metric_tensors = []
 
     for task_name, data in all_data:
       with tf.name_scope(task_name):
@@ -114,8 +123,27 @@ class MTLModel(BaseModel):
     acc = tf.cast(tf.equal(pred, labels), tf.float32)
     acc = tf.reduce_mean(acc)
 
+    self.metric_tensors.append((
+      loss_ce, 0.05*loss_adv, loss_diff, FLAGS.l2_coef*(loss_l2+loss_adv_l2), acc, loss
+    ))
+
     self.tensors.append((acc, loss))
     # self.tensors.append((acc, loss, pred))
+
+  def merged_summary(self, name_scope):
+    summarys = []
+    metric_names = ['loss-ce', 'loss-adv', 'loss-diff', 'loss-l2', 'acc', 'loss']
+    for i, data in enumerate(self.metric_tensors):
+      with tf.name_scope(fudan.get_task_name(i)):
+        with tf.name_scope(name_scope):
+          summarys.extend([tf.summary.scalar(metric_names[index], tensor) for index, tensor in enumerate(data)])
+
+    with tf.name_scope('mean'):
+      with tf.name_scope(name_scope):
+        for i, name in enumerate(metric_names):
+          summarys.append(_summary_mean(self.metric_tensors, i, name))
+
+    return tf.summary.merge(summarys)
     
   def build_train_op(self):
     if self.is_train:

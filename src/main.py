@@ -12,13 +12,7 @@ from models import mtl_model
 
 flags = tf.app.flags
 
-flags.DEFINE_integer("word_dim", 300, "word embedding size")
-flags.DEFINE_integer("num_epochs", 100, "number of epochs")
-flags.DEFINE_integer("batch_size", 16, "batch size")
 
-flags.DEFINE_boolean('adv', False, 'set True to adv training')
-flags.DEFINE_boolean('test', False, 'set True to test')
-flags.DEFINE_boolean('build_data', False, 'set True to generate data')
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -58,23 +52,41 @@ def build_data():
 
   _build_data(all_data)
   _trim_embed()
+
+def model_name():
+    model_name = 'fudan-mtl'
+    if FLAGS.adv:
+      model_name += '-adv'
+    return model_name
   
 def train(sess, m_train, m_valid):
   best_acc, best_step= 0., 0
   start_time = time.time()
   orig_begin_time = start_time
 
+  summary_prefix = os.path.join(FLAGS.logdir, model_name())
+
+  train_writer = tf.summary.FileWriter(summary_prefix + '/train', sess.graph)
+  valid_writer = tf.summary.FileWriter(summary_prefix + '/valid', sess.graph)
+
+  merged_train = m_train.merged_summary('train')
+  merged_valid = m_valid.merged_summary('valid')
+
+  num_step = 0
   n_task = len(m_train.tensors)
   for epoch in range(FLAGS.num_epochs):
     all_loss, all_acc = 0., 0.
     for batch in range(82):
-      for i in range(n_task):
-        acc, loss = m_train.tensors[i]
-        train_op = m_train.train_ops[i]
-        train_fetch = [train_op, loss, acc]
-        _, loss, acc = sess.run(train_fetch)
-        all_loss += loss
-        all_acc += acc
+      train_fetch = [m_train.tensors, m_train.train_ops, merged_train]
+
+      res, _, summary = sess.run(train_fetch)  # res = [[acc], [loss]]
+      res = np.array(res)
+
+      train_writer.add_summary(summary, num_step)
+
+      all_loss += sum(res[:, 1].astype(np.float))
+      all_acc += sum(res[:, 0].astype(np.float))
+      num_step = num_step + 1
 
     all_loss /= (82*n_task)
     all_acc /= (82*n_task)
@@ -86,10 +98,11 @@ def train(sess, m_train, m_valid):
 
     # valid accuracy
     valid_acc = 0.
-    for i in range(n_task):
-      acc, _ = m_valid.tensors[i]
-      acc = sess.run(acc)
+    res, summary = sess.run([m_valid.tensors, merged_valid])
+    for  acc, _ in res:
       valid_acc += acc
+    valid_writer.add_summary(summary, num_step)
+
     valid_acc /= n_task
 
     if best_acc < valid_acc:
