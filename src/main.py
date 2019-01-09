@@ -162,7 +162,15 @@ def main(_):
     config.gpu_options.allow_growth = True
     
     with tf.Session(config=config) as sess:
-      sess.run(init_op)
+
+      try:
+        m_train.restore(sess)
+      except Exception as e:
+        init_op = tf.group(tf.global_variables_initializer(),
+                           tf.local_variables_initializer())  # for file queue
+        sess.run(init_op)
+        tf.logging.warning("restore failed: {}".format(str(e)))
+
       print('='*80)
 
       if FLAGS.test:

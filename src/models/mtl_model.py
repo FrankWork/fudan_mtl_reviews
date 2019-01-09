@@ -156,12 +156,12 @@ def build_train_valid_model(model_name, word_embed, all_train, all_test, adv, te
   with tf.name_scope("Train"):
     with tf.variable_scope(model_name, reuse=None):
       m_train = MTLModel(word_embed, all_train, adv, is_train=True)
+      m_train.build_train_op()
       m_train.set_saver(model_name)
-      if not test:
-        m_train.build_train_op()
   with tf.name_scope('Valid'):
     with tf.variable_scope(model_name, reuse=True):
       m_valid = MTLModel(word_embed, all_test, adv, is_train=False)
+      m_valid.build_train_op()
       m_valid.set_saver(model_name)
   
   return m_train, m_valid
