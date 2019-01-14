@@ -8,6 +8,14 @@ from collections import namedtuple
 
 flags = tf.app.flags
 
+flags.DEFINE_integer("word_dim", 300, "word embedding size")
+flags.DEFINE_integer("num_epochs", 100, "number of epochs")
+flags.DEFINE_integer("batch_size", 16, "batch size")
+
+flags.DEFINE_boolean('adv', False, 'set True to adv training')
+flags.DEFINE_boolean('test', False, 'set True to test')
+flags.DEFINE_boolean('build_data', False, 'set True to generate data')
+
 flags.DEFINE_string("vocab_file", "data/generated/vocab.mtl.txt", 
                               "vocab of train and test data")
 
